@@ -63,6 +63,7 @@ section {
     width: 100%;
 }
 
+
 .home-left,
 .abt-right {
     width: 50%;
@@ -81,7 +82,13 @@ section {
 .profile-photo {
     border-radius: 50%;
     max-width: 100%;
-    height: auto;
+
+}
+
+.my-image {
+
+    max-width: 400px;
+    max-height: auto;
 }
 
 h2 {
