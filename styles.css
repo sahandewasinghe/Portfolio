@@ -39,10 +39,37 @@ nav ul {
 }
 
 nav a {
-    text-decoration: none;
-    font-weight: bold;
+    position: relative;
     color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+
 }
+
+nav a:hover {
+    transform: scale(1.1);
+    color: #ac43c4;
+
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ac43c4;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
 
 .logo img {
     height: 50px;
@@ -51,7 +78,6 @@ nav a {
     border-radius: 50%;
     object-fit: cover;
 }
-
 
 section {
     padding: 50px 10%;
@@ -63,6 +89,9 @@ section {
     width: 100%;
 }
 
+.home-container{
+    flex-wrap: wrap-reverse;
+}
 
 .home-left,
 .abt-right {
@@ -82,13 +111,12 @@ section {
 .profile-photo {
     border-radius: 50%;
     max-width: 100%;
-
+    height: auto;
 }
 
 .my-image {
-
     max-width: 400px;
-    max-height: auto;
+    height: auto;
 }
 
 h2 {
@@ -170,7 +198,6 @@ h2 {
     transform: scale(0.96);
 }
 
-
 /* projects */
 
 .projects {
@@ -208,7 +235,7 @@ h2 {
     line-height: 1.5;
 }
 
-/* cetificates */
+/* certificates */
 
 .certificates {
     display: flex;
@@ -244,8 +271,6 @@ h2 {
     font-size: 14px;
     line-height: 1.5;
 }
-
-/* card end */
 
 .tech {
     margin-top: 15px;
@@ -354,11 +379,8 @@ footer {
     box-shadow: 0 5px 15px rgba(172, 67, 196, 0.4);
 }
 
-
-
-/*to increase mobile responsiveness*/
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 992px) {
-
     h2 {
         font-size: 60px;
     }
@@ -370,13 +392,9 @@ footer {
     section {
         padding: 50px 5%;
     }
-
 }
 
-
-
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         align-items: center;
@@ -387,7 +405,6 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-
 
     .home-container,
     .abt-me-container {
@@ -409,6 +426,7 @@ footer {
 
     .social-links {
         justify-content: center;
+        margin-top: 10px;
     }
 
     h2 {
@@ -423,17 +441,25 @@ footer {
         font-size: 32px;
     }
 
-
     .contact-container {
         flex-direction: column;
     }
 
+
+    .home-right {
+        order: 1;
+    }
+
+    .home-left {
+        order: 2;
+    }
+
+    .social-links {
+        order: 3;
+    }
 }
 
-
-
 @media (max-width: 480px) {
-
     h2 {
         font-size: 34px;
     }
@@ -453,5 +479,4 @@ footer {
     .contact-right form {
         padding: 20px;
     }
-
 }
